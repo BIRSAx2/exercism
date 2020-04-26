@@ -1,12 +1,12 @@
 
-# [Exercism Python Track](https://exercism.io/my/tracks/python)
+# [Exercism Solutions](https://exercism.io)
 
 <div align="center"> 
 <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png" hspace="20">
 
 </div>
 
-## Exercism exercises in Python
+## My Solutions to Exercism Tracks
 
 ### About Exercism
 Exercism is an online platform designed to help you improve your coding skills through practice and mentorship.
