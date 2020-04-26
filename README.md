@@ -48,51 +48,6 @@ exercism submit /PATH/TO/SOLUTION
 <br/>
 - In your web-browser, go back to the language tracks page, choose your exercise and the exercise you've just worked on. You will now see your solution online and notice that it is awaiting a mentor.<br/>
 
-### Testing
-
-All exercises must be compatible with Python versions 2.7 and 3.4 upwards.
-
-To test a single exercise (e.g., with Python 2.7):
-```python
-python2.7 test/check-exercises.py [exercise-name]
-```
-
-To test all exercises (e.g., with Python 3):
-```python
-python3 test/check-exercises.py
-```
-
-### Code Style
-
-The Python code in this repo is meant to follow the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/) ([a stylized version](http://pep8.org)).
-
-This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default settings to enforce the coding standard.
-
-### Setting up Python3 virtual environment on Windows machine
-
- 1. open CMD
- 2. navigate to project directory, for example:<br/> 
-```bash
-cd C:\Users\superadmin\Desktop\Python\CodinGame
-```
- 3. run following command:<br/> 
-```bash 
-pip install virtualenv
-```
- 4. run following command:<br/> 
-```bash 
-virtualenv venv --python=python
-```
-
-### Python3 virtual environment activation on Windows machine<br/> 
-
-On Windows, the equivalent activate script is in the Scripts folder.<br/> 
-```bash
-> \path\to\env\Scripts\activate
-```
-And type 'deactivate' to undo the changes.<br/>
-
-[Source](https://virtualenv.pypa.io/en/stable/userguide/)<br/>
 
 ### How to delete multiples files in Git
 
