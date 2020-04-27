@@ -5,5 +5,14 @@
 //
 
 export const hey = (message) => {
-  throw new Error("Remove this statement and implement this function");
+  if(message.length===0)
+    return "Fine. Be that way!";
+  if(message.endsWith("?!") || message.endsWith("!?"))
+    return "Calm down, I know what I'm doing!";
+  if(message.endsWith("?"))
+    return "Sure.";
+  if(message.endsWith("!"))
+    return "Whoa, chill out!";
+  return "Whatever.";
+  
 };
