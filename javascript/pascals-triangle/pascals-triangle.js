@@ -1,26 +1,27 @@
-//
-// This is only a SKELETON file for the 'Pascals Triangle' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const rows = (N) => {
-  let rows=[];
-  for(let L=0;L<N;L++){
-    let row=[];
-    for(let col=0;C<=L;C++){
-      if(C==0 || L==C)
-        row.push(1);
-      else
-        row.push(T[L-1][C]+T[L-1][C-1]);
-    }
+export const factorial = (n) => {
+  if(n < 1) {
+    return 1;
   }
-  
- /* for (int L = 0;(L<N);L++)
-    for (int C = 0;(C <= L);C++)
-      {
-      if ((C == 0) || (L == C))
-        T[L][C] = 1;
-      else 
-        T[L][C] = T[L-1][C] + T[L-1][C-1];  
-      }*/
+  return n * factorial(n - 1);
+}
+
+export const binomial = (n, k) => {
+  if(n == k) return 1;
+  if(n == 0) return 0;
+  const denominator = factorial(k) * factorial(n - k);
+  return factorial(n) / denominator;
+}
+
+export const rows = (n) => {
+  var i = 0;
+  var triangle = [];
+  while(i < n) {
+    var row = []
+    for(var j = 0; j < i + 1; j++) {
+      row.push(binomial(i, j))
+    }
+    triangle.push(row)
+    i++;
+  }
+  return triangle
 };
