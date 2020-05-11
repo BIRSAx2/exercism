@@ -5,13 +5,15 @@
 //
 
 export const hey = (message) => {
+  message=message.trim()
   if(message.length===0)
     return "Fine. Be that way!";
-  if(message.endsWith("?!") || message.endsWith("!?"))
+
+  if(message.endsWith("?") && (message.match("[a-zA-Z]+") && message.toUpperCase()===message))
     return "Calm down, I know what I'm doing!";
   if(message.endsWith("?"))
     return "Sure.";
-  if(message.endsWith("!"))
+  if(message===message.toUpperCase() && message.match("[a-zA-Z]+"))
     return "Whoa, chill out!";
   return "Whatever.";
   

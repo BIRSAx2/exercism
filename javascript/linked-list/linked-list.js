@@ -75,7 +75,9 @@ export class LinkedList {
         foundNode=searchNode;
         foundNode.previous=foundNode.next;
       }else{
-        searchNode=this.head.next;
+        searchNode=searchNode.next;
+        if(searchNode==null)
+          break;
       }      
     }
     if(foundNode)
