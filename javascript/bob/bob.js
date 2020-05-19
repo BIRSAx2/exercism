@@ -16,5 +16,4 @@ export const hey = (message) => {
   if(message===message.toUpperCase() && message.match("[a-zA-Z]+"))
     return "Whoa, chill out!";
   return "Whatever.";
-  
 };
