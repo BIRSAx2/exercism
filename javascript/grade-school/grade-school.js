@@ -8,7 +8,7 @@ export class GradeSchool {
     this._roster={};
   }
   roster() {
-    return this._roster;
+    return JSON.parse(JSON.stringify(this._roster));
   }
 
   add(studentName,year) {
@@ -19,6 +19,6 @@ export class GradeSchool {
   }
 
   grade(year) {
-    return (!this._roster[year]) ? [] : this._roster[year];
+    return (!this._roster[year]) ? [] : this.roster()[year];;
   }
 }

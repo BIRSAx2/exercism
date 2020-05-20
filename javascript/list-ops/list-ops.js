@@ -4,57 +4,56 @@
 //
 
 export class List {
-  constructor(values=[]) {
-    this.values=values;
+  constructor(values = []) {
+    this.values = values;
   }
 
   append(list) {
-    this.values=this.values.concat(list);
+    return new List([...this.values, ...list.values]);
   }
 
-  concat(list) {
-    this.values.append(list);
-    return values;
+  concat(listOfLists) {
+    let newList = this
+    for (let i = 0; i < listOfLists.values.length; i++) {
+      newList = newList.append(listOfLists.values[i])
+    }
+    return newList
   }
 
-  filter(list,func) {
-    let filteredList=[];
-    this.list.forEach(element => {
-      if(func(element))
-        filteredList.append(element);
+  filter(func) {
+    let filteredList = []
+    this.values.forEach(element => {
+      if (func(element))
+        filteredList.push(element)
     });
-    return filteredList;
+    return new List(filteredList);
   }
 
-  map(list,func) {
-    let mappedList=[];
-    this.list.forEach(element =>{
+  map(func) {
+    let mappedList = [];
+    this.values.forEach(element => {
       mappedList.push(func(element));
     });
-    return mappedList;
+    return new List(mappedList);
   }
 
   length() {
     return this.values.length;
   }
 
-  foldl(reducerFunc,initialValue) {
-    let accumulator= initialValue;
-    for(let i=0; i<this.values.length;i++){
-      accumulator=reducerFunc(accumulator,this.values[this.values.length-1-i]);
-    }
-    return accumulator;
+  foldl(reducerFunc, initialValue) {
+    let acc = initialValue
+    this.values.forEach(el =>{ acc= reducerFunc(acc,el)});
+    return acc;
   }
 
   foldr(reducerFunc, initialValue) {
-    let accumulator= initialValue;
-    for(let i=0;i<this.values.length;i++){
-      accumulator=reducerFunc(this.values[this.values.length-1-i],accumulator);
-    }
-    return accumulator
+    let acc = initialValue;
+    this.values.reverse().forEach(el => {acc = reducerFunc(acc,el)});
+    return acc
   }
 
   reverse() {
-    return this.values.reverse();
+    return new List(this.values.reverse());
   }
 }
