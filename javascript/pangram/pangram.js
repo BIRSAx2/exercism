@@ -4,14 +4,6 @@
 //
 
 export const isPangram = (sentence) => {
-  let letters = "abcdefghijklmnopqrstuvwxyz";
-  let letter;
-  if (sentence.length==0) 
-    return false
-  console.log(sentence)
-  letters.split("").forEach(element => {
-     if(!sentence.includes(element))
-      return false;
-  });
-  return true;
+  let regex = /([a-z])(?!.*\1)/g;
+  return (sentence.toLowerCase().match(regex) || []).length === 26;
 };
