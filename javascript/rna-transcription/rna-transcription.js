@@ -5,5 +5,16 @@
 //
 
 export const toRna = (dna) => {
-  return dna.replace("G","X").replace("C","G").replace("T","A").replace("A","U").replace("X","C");
+  const toRna = {
+    "G": "C",
+    "C": "G",
+    "T": "A",
+    "A": "U"
+
+  }
+  let rna = "";
+  dna.toUpperCase().split("").forEach(nucleotide => {
+    rna += toRna[nucleotide];
+  });
+  return rna;
 };

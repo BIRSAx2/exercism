@@ -6,8 +6,8 @@
 
 
 export const age = (planet,seconds) => {
-  const secondsInAYear = 31557600;
-  const orbitalRatio = {
+  const EARTH_ORBITAL_PERIOD_SECONDS = 31557600;
+  const ORBITALS_PERIOD_RATES = {
   earth: 1,
   mercury: 0.2408467,
   venus: 0.61519726,
@@ -17,5 +17,5 @@ export const age = (planet,seconds) => {
   uranus: 84.016846,
   neptune: 164.79132,
 };
-  return parseFloat(((seconds/secondsInAYear)*orbitalRatio[planet]).toFixed(2));
+  return parseFloat((seconds/(EARTH_ORBITAL_PERIOD_SECONDS*ORBITALS_PERIOD_RATES[planet])).toFixed(2));
 };
